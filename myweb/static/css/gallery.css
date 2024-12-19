@@ -1,0 +1,139 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body,html{
+    height: auto;
+    width: 100%;
+    background-color: white;
+}
+
+h3{
+    font-size: 30px;
+    text-align: center;
+    color: red;
+    font-weight: bolder;
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+
+/* Centered text */
+.contain{
+    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    
+  }
+  .contain img{
+    height: 500px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+   filter: opacity(0.8);
+    
+  }
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } 
+
+
+/* 1st box end */
+
+/* slick slider */
+
+.slider {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 120px;
+  }
+.card1 {
+    /* background-color: #007BFF; */
+    color: white;
+    font-size: 20px;
+    margin: 0px;
+    border-radius: 10px;
+   padding-right: 10px;
+   padding-left: 40px;
+   padding-top: 30px;
+   margin: 20px;
+    height: 300px;
+    width: 30%;
+    /* border: 1px solid black; */
+  }
+  .card1 img{
+    box-shadow: 0 0 10px 0 black;
+  }
+  /* Targeting Slick slider arrows */
+  .slick-prev, .slick-next {
+    color: black; /* Change the arrow color */
+    size: 40px;
+    font-size: 0px; /* Optional: Adjust the size of the arrows */
+    z-index: 1;
+    padding-left: 70px;
+    padding-right: 30px;/* Ensure the arrows are on top */
+  }
+  
+  .slick-prev:before, .slick-next:before {
+    color: black; /* Change the default arrow color to black */
+  }
+  .slick-prev{
+    padding-left: 130px;
+  }
+  .card1 img:hover {
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out;
+  }
+  /* Style for the image container and text */
+
+
+
+/* 8card css */
+.card img:hover{
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  
+  .card-deck{
+    display: flex;
+    padding-top: 30px;
+    margin: 0px;
+    padding-left: 70px;
+    padding-bottom: 30px;
+  }
+
+  .card{
+    box-shadow: 0 0 10px 0 black;
+    margin: 0px;
+    padding: 0px;
+    height: fit-content;
+    width: fit-content;
+  }
+
+  .card-deck,.card{
+  border-radius: 10px;
+  overflow: hidden;
+  }
+  
+  .card-body1 p{
+    text-align: center;
+    color: red;
+    font-size: 18px;
+  }
+  .card-body1 h3{
+    text-align: center;
+    font-weight: bolder;
+    padding-bottom: 20px;
+  
+  }
+  /* 8 box card end */

@@ -1,0 +1,75 @@
+@media screen and (max-width: 600px) and (min-width: 0px) {
+    
+.navbar{
+    /* background-color: blue; */
+    width: 100%;
+}
+
+.nav-links{
+    gap: 15px;
+}
+
+#service-card{
+    display: flex;
+    height: auto !important;
+    padding-top: 30px;
+    margin: 0px;
+    padding-left: 0;
+  }
+
+.accordion-box {
+    width: 203%;
+    padding-left: 0;
+    font-size: 25px;
+}
+
+#look-card{
+    height: auto !important;
+    padding: 0 !important;
+}
+
+#form-cont{
+    flex-direction: column;
+    margin: 0;
+    padding: 10px;
+}
+
+#form-cont .left{
+    width: 100%;
+}
+
+.slick-track{
+    display: none;
+}
+
+.site-middle-footer-inner-wrap{
+    flex-direction: column;
+    padding: 0;
+}
+
+.wpcf7-form-control-wrap input{
+    width: 90%;
+    padding-left: 5%;
+}
+
+.copyright{
+    height: auto;
+}
+#Veterinarian{
+    display: flex;
+    padding-top: 30px;
+    margin: 0px;
+    padding-left: 0px;
+}
+
+.site-container {
+    width: 100%;
+    text-align: center;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    padding-left: 15%;
+}
+}

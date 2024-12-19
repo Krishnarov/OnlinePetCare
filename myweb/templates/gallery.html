@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <link rel="stylesheet" href="{% static 'css/allinone.css'%}">
+    <link rel="stylesheet" href="{% static 'css/gallery.css'%}">
+</head>
+<body>
+<div class="container-fluid">
+      <!-- navbar strat -->
+ <!-- navbar section -->
+ <div class="navbar">
+    <div class="logo"><img src="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Logo.svg" alt="logo"></div>
+    <div class="nav-links">
+      <a href="{% url 'myweb:index' %}">Home</a>
+      <a href="{% url 'myweb:gallery' %}" style="color: rgb(213, 0, 160);">Gallery</a>
+      <a href="{% url 'myweb:services' %}">Services</a>
+      <a href="{% url 'myweb:blog' %}">Blog</a>
+      <a href="{% url 'myweb:index' %}">About</a>
+
+    </div>
+    <div class="nav-icons">
+      <a href="#"><i class="ri-search-line"></i></a>
+      <a href="{% url 'myweb:login'%}"><button style="height: 40px; width: auto; align-items: center; padding: 5px; padding-left: 10px; padding-right: 10px;background-color: #ff3370; border: none; color: white;">My Account</button>
+      </a>
+    </div>
+  </div>
+  <!-- navbar end -->
+
+
+
+  <!-- photu -->
+  <div class="contain">
+    <img src="https://plus.unsplash.com/premium_photo-1663045519945-6e3d06b9123f?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Snow">
+    <div class="centered">
+      <p style="text-align: center; font-size: 20px; color: black;"><a href="" style="text-decoration: none;font-size: 30px;">Home</a>/ Blog</p>
+      <h2 style="font-weight: bolder; text-align: center; font-size: 80px;color: navy; padding-bottom: 200px;">Blog</h2>
+    </div>
+  </div>
+
+  <!-- photu end -->
+<br/>
+<div class="our">
+    <h3>Our Gallery</h3>
+    <h1>Image Slider</h1>
+</div>
+
+<!-- slick slider -->
+
+<div class="slider">
+    <div class="card1">
+      <div class="image-container">
+        <img src="{% static 'image/mouse.jpg'%}" alt="Image 1">
+      </div>
+    </div>
+    <div class="card1">
+      <div class="image-container">
+        <img src="{% static 'image/dog.jpg'%}" alt="Image 1">
+      </div>
+    </div>
+    <div class="card1">
+      <div class="image-container">
+        <img src="{% static 'image/cat.jpg'%}"alt="Image 1">
+      </div>
+    </div>
+    <div class="card1">
+      <div class="image-container">
+        <img src="{% static 'image/rabit.jpg'%}" alt="Image 1">
+      </div>
+    </div>
+    <div class="card1">
+      <div class="image-container">
+        <img src="{% static 'image/billa.jpg'%}" alt="Image 1">
+      </div>
+    </div>
+    <div class="card1">
+      <div class="image-container">
+        <img src="{% static 'image/dogs.jpg'%}"alt="Image 1">
+      </div>
+    </div>
+  </div>
+<!-- slick slider end -->
+
+
+<!-- gallery grid -->
+<div class="our">
+    <h3>Our Gallery</h3>
+    <h1>Image Grid</h1>
+</div>
+
+<!-- 8 box images -->
+
+<div class="row">
+    <div class="col-sm-12">
+      <div class="card-deck" id="look-card">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/a1.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/a2.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/a3.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/a4.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card-deck" id="look-card">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/a5.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/a6.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/a7.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/a8.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- 8 box card end -->
+
+<!-- navbar start -->
+
+<div class="site-footer-row-container-inner">
+
+
+    <div class="site-container">
+  
+  
+  <div class="site-middle-footer-inner-wrap site-footer-row site-footer-row-columns-4 site-footer-row-column-layout-left-forty site-footer-row-tablet-column-layout-default site-footer-row-mobile-column-layout-row ft-ro-dir-column ft-ro-collapse-normal ft-ro-t-dir-default ft-ro-m-dir-default ft-ro-lstyle-noline">
+  
+  
+  <div class="site-footer-middle-section-1 site-footer-section footer-section-inner-items-1">
+        <div class="footer-widget-area widget-area site-footer-focus-item footer-widget1 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default" data-section="sidebar-widgets-footer1">
+  <div class="footer-widget-area-inner site-info-inner">
+  <div id="block-16" class="widget widget_block">
+  <div class="wp-block-group is-layout-flow"><div class="wp-block-group__inner-container toggled-off">
+  <h3 class="has-theme-palette-1-color has-text-color wp-block-heading" style="font-size:16px"><img decoding="async" class="wp-image-10147" style="width: 190px;" src="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Footer-Logo.svg" alt=""></h3>
+  
+  
+  
+  <div class="wp-block-group is-layout-flow"><div class="wp-block-group__inner-container">
+  <p>502 New Design Str, Melbourne, <br>San Francisco, CA 94110,<br> United States of America​ Australia</p>
+  
+  
+  
+  <p class="has-theme-palette-3-color has-text-color has-medium-font-size" style="font-weight:bolder; font-size: 25px; color: #90c427;">+1 123-456-789</p>
+  
+  
+  
+  <p>Email:<a href="#" >demo@example.com</a></p>
+  </div></div>
+  </div></div>
+  </div>	</div>
+  </div><!-- .footer-widget1 -->
+      </div>
+                <div class="site-footer-middle-section-2 site-footer-section footer-section-inner-items-1">
+        <div class="footer-widget-area widget-area site-footer-focus-item footer-widget2 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default" data-section="sidebar-widgets-footer2">
+  <div class="footer-widget-area-inner site-info-inner">
+  <div id="block-17" class="widget widget_block">
+  <div class="wp-block-group is-layout-flow"><div class="wp-block-group__inner-container toggled-off">
+  <h3 class="widget-title has-theme-palette-1-color has-text-color wp-block-heading" style="text-transform:capitalize">Company</h3>
+  
+  
+  
+  <ul>
+  <li><a href="#">About Us</a></li>
+  <li><a href="#">Contact</a></li>
+  <li><a href="#">Support</a></li>
+  <li><a href="#">Pricing</a></li>
+  <li><a href="#">Affiliate</a></li>
+  </ul>
+  </div></div>
+  </div>	</div>
+  </div><!-- .footer-widget2 -->
+      </div>
+                <div class="site-footer-middle-section-3 site-footer-section footer-section-inner-items-1">
+        <div class="footer-widget-area widget-area site-footer-focus-item footer-widget3 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default" data-section="sidebar-widgets-footer3">
+  <div class="footer-widget-area-inner site-info-inner">
+  <div id="block-18" class="widget widget_block">
+  <div class="wp-block-group is-layout-flow"><div class="wp-block-group__inner-container toggled-off">
+  <h3 class="widget-title has-theme-palette-1-color has-text-color wp-block-heading" style="text-transform:capitalize">Solutions</h3>
+  
+  
+  
+  <ul>
+  <li><a href="#">FAQ</a></li>
+  <li><a href="#">Whois</a></li>
+  <li><a href="#">Terms</a></li>
+  <li><a href="#">Privacy Policy</a></li>
+  <li style="color: white;"><a href="#"></a><a href="#">Exchanges</a></li>
+  </ul>
+  </div></div>
+  </div>	</div>
+  </div><!-- .footer-widget3 -->
+  </div>
+                <div class="">
+        <div class="footer-widget-area widget-area site-footer-focus-item footer-widget4 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default" data-section="sidebar-widgets-footer4">
+  <div class="footer-widget-area-inner site-info-inner">
+  <div id="block-20" class="widget widget_block">
+  <h2 class="wp-block-heading has-theme-palette-2-color has-text-color" style="color: #ff3370; font-weight: bolder;">Newsletter</h2>
+  </div><div id="block-21" class="widget widget_block"><p>
+  </p><div class="wpcf7 js" id="wpcf7-f11929-o2" lang="en-US" dir="ltr">
+  <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+  <form action="/wp/WP01/WP01021/#wpcf7-f11929-o2" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+  <div style="display: none;">
+  <input type="hidden" name="_wpcf7" value="11929">
+  <input type="hidden" name="_wpcf7_version" value="5.8.7">
+  <input type="hidden" name="_wpcf7_locale" value="en_US">
+  <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f11929-o2">
+  <input type="hidden" name="_wpcf7_container_post" value="0">
+  <input type="hidden" name="_wpcf7_posted_data_hash" value="">
+  </div>
+  <p><label><span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Enter Your email" type="email" name="your-email"></span> </label>
+  </p>
+  <div class="footer-btn">
+  <p><button style="background-color: #ff3370; color: white;">Submit</button></p>
+  <div>
+  </div>
+  </div><div class="wpcf7-response-output" aria-hidden="true"></div>
+  </form>
+  </div>
+  <p></p>
+  </div>	</div>
+  </div><!-- .footer-widget4 -->
+      </div>
+            </div>
+  </div>
+  </div>
+  
+  <div class="copyright">
+  <p>&copy;2024 All Rights Reserved. Developed By CoderPlace</p>
+  </div>
+<!-- navbar end -->
+
+
+
+
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="{% static 'script.js'%}"></script>
+    
+</body>
+</html>

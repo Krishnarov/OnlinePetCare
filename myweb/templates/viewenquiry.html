@@ -1,0 +1,33 @@
+{% extends "adminparent.html" %}
+{% block body %}
+    <div class="row">
+        <h1 style="text-align:center;">views Enquiries</h1>   
+        <div class="col-sm-12" style="overflow-x:scroll;">
+            <table class="table table-bordered text-light">
+                <tr>
+
+                    <th>Name</th>
+                    <th>Email address</th>
+                    <th>Subject</th>
+                    <th>Message</th>
+                    <th>Enquiry date</th>
+                </tr>
+                {% for s in enq%}
+                <tr>
+
+                    <td> {{s.name}}</td>
+
+                    <td> {{s.email}}</td>
+
+                    <td> {{s.subject}}</td>
+                    <td><div style="display: flex; flex-wrap: wrap; overflow: hidden; text-overflow: ellipsis; white-space: normal;">  {{s.message}}</div></td>
+                    <td> {{s.enquirydate}}</td>
+
+                </tr>
+                {% endfor %}
+            </table>
+         
+              
+        </div>
+    </div>
+{% endblock body %}

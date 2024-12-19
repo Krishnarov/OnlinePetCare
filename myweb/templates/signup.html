@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="responsive.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      .navbar {
+        max-width: 100%;
+        height: 60px;
+        background-color: #f2f2f2;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+        align-items: center;
+        top: 0; /* Stick to the top of the page */
+        z-index: 1000; /* Ensure it's above other content */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for visual effect */
+        opacity: 0.8;
+      }
+      .logo img {
+        height: 40px;
+        width: 100%;
+      }
+
+      a {
+        color: black;
+        font-size: 18px;
+        text-decoration: none;
+      }
+
+      /* navbar strt */
+
+      /* Navbar General Styling */
+      .navbar {
+        text-decoration: none;
+        color: black;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* Logo Styling */
+      .logo {
+        font-family: cursive;
+        font-size: 30px;
+        font-weight: bolder;
+        padding-left: 20px;
+      }
+
+      /* Navigation Links */
+      .nav-links {
+        display: flex;
+        gap: 80px;
+        font-size: 20px;
+      }
+
+      /* Icons Styling */
+      .nav-icons {
+        display: flex;
+        gap: 50px;
+        font-size: 25px;
+      }
+
+      /* Icons Flexbox Child */
+      .nav-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .navbar {
+          flex-direction: column;
+          height: auto;
+          padding: 10px;
+          text-align: center;
+        }
+
+        .nav-links {
+          gap: 50px;
+          font-size: 18px;
+          margin-top: 10px;
+        }
+
+        .nav-icons {
+          gap: 15px;
+          margin-top: 10px;
+        }
+
+        .logo {
+          font-size: 26px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .nav-links {
+          flex-direction: column;
+          gap: 15px;
+          font-size: 16px;
+        }
+
+        .nav-icons {
+          gap: 10px;
+          font-size: 22px;
+        }
+
+        .logo {
+          font-size: 24px;
+        }
+        .container {
+          {% comment %} position: absolute; {% endcomment %}
+          {% comment %} right: 0; {% endcomment %}
+          margin: 20px;
+          {% comment %} max-width: 400px; {% endcomment %}
+          {% comment %} height: 500px; {% endcomment %}
+          padding: 16px;
+          background-color: transparent;
+        }
+      }
+
+      /* navbar end */
+
+      .bg-img {
+        /* The image used */
+        background-image: url("https://img.freepik.com/free-psd/gadget-concept-landing-page-template_23-2148626925.jpg?t=st=1733437285~exp=1733440885~hmac=fbbaeca6c75ee15926543e30916081456e66669f7202f99dd86954c7b7e2430b&w=1060");
+
+        /* Control the height of the image */
+        min-height: 700px;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      /* Add styles to the form container */
+      .container {
+
+        
+        
+        position: absolute;
+        right: 80px;
+        {% comment %} margin: 20px; {% endcomment %}
+        max-width: 400px;
+        {% comment %} height: 400px; {% endcomment %}
+        {% comment %} padding: 16px; {% endcomment %}
+        background-color: transparent;
+        {% comment %} margin-right: 170px; {% endcomment %}
+        {% comment %} margin-top: 80px; {% endcomment %}
+      }
+      @media (max-width: 768px) {
+      }
+
+      /* Full-width input fields */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      /* Set a style for the submit button */
+      .btn {
+        background-color: #163c89;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        width: 30%;
+        opacity: 0.9;
+        margin-left: 120px;
+      }
+      .create {
+        background-color: #163c89;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        margin-top: 10px;
+      }
+
+      .btn:hover {
+        transform: scale(1.03);
+        transition: all 0.2s ease-out;
+        background-color: #0f704d;
+      }
+
+      /* footer section */
+      /* Apply background color to the main footer container */
+      .site-footer-row-container-inner {
+        background-color: #333666; /* Dark blue background color */
+      }
+
+      /* Set display flex to the main container */
+      .site-container {
+        display: flex; /* Make the container a flexbox */
+        flex-wrap: wrap; /* Ensure the items wrap if they don't fit in one line */
+      }
+      .site-middle-footer-inner-wrap {
+        display: flex;
+        gap: 25%;
+        padding-left: 50px;
+        padding-top: 20px;
+        padding-bottom: 30px;
+      }
+
+      /* Main container for footer */
+      .site-footer-row-container-inner {
+        background-color: #333666; /* Set background color */
+        display: flex; /* Apply flexbox layout */
+        flex-wrap: wrap; /* Allow items to wrap if needed */
+      }
+
+      /* Flex direction for columns */
+      .ft-ro-dir-column .site-footer-section {
+        flex-direction: column;
+      }
+      .site-footer-section {
+        color: white;
+      }
+      /* Flexbox and spacing for footer widget areas */
+      .footer-widget-area {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+      }
+      .footer-widget-area > * {
+        flex: 1;
+        min-width: 0;
+      }
+
+      /* Remove margins for last widget */
+      .widget-area .widget:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Remove left and right margins for widgets */
+      .widget-area .widget {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      /* Box sizing for block groups */
+      .wp-block-group {
+        box-sizing: border-box;
+      }
+      .wp-block-group li {
+        color: white;
+      }
+      /* Image styling */
+      img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+      }
+
+      /* Font styling for various elements */
+
+      /* Margin adjustments for specific heading and paragraph elements */
+      .site-middle-footer-inner-wrap .footer-widget1 .widget_block h3 {
+        margin-block-end: 47px;
+      }
+      .site-middle-footer-inner-wrap .footer-widget1 .widget_block p {
+        margin-block: 10px;
+      }
+
+      /* Font styling for widget titles */
+      .site-middle-footer-inner-wrap .widget-area .widget-title {
+        font-weight: 800;
+        font-size: 22px;
+        color: var(--global-palette8);
+        margin-block-end: 38px;
+      }
+
+      /* List styling */
+      .site-footer .widget-area ul li {
+        list-style: none;
+      }
+      .widget li {
+        line-height: 1.8;
+      }
+      ul li::before,
+      ul li::after {
+        content: none; /* Ensure no content is added before or after list items */
+      }
+      ul {
+        list-style: none; /* Remove bullets from list */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+      }
+
+      .wp-block-group__inner-container a {
+        text-decoration: none;
+        color: white;
+      }
+      button,
+      .button,
+      .wp-block-button__link,
+      input[type="button"],
+      input[type="reset"],
+      input[type="submit"],
+      .fl-button,
+      .elementor-button-wrapper .elementor-button {
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 1.6;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        border-radius: 5px;
+        padding: 13px 33px 13px 33px;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+      }
+      .wpcf7-form-control-wrap input {
+        border-radius: 5px;
+        height: 50px;
+      }
+      .site-container {
+        width: 100%;
+      }
+
+      .site-middle-footer-inner-wrap {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping to the next line */
+      }
+
+      .site-footer-section {
+        box-sizing: border-box; /* Ensures padding and border are included in the width */
+        padding: 10px; /* Adds padding inside each section */
+        /* Additional styles if needed */
+      }
+
+      /* Optional: to avoid spacing issues */
+      .site-footer-middle-section-1,
+      .site-footer-middle-section-2,
+      .site-footer-middle-section-3,
+      .site-footer-middle-section-4 {
+        /* Ensure no extra margins or borders are causing overflow */
+        margin: 0;
+        border: none;
+        padding-left: 50;
+      }
+      .copyright {
+        height: 50px;
+        width: 100%;
+        background-color: #333666;
+      }
+      .copyright p {
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        font-size: 16px;
+      }
+      /* Remove margin and padding between footer and copyright */
+      .site-footer-row-container-inner {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .copyright {
+        margin-top: 0;
+        padding-top: 0; /* This can be adjusted if needed */
+      }
+
+      .copyright p {
+        padding-top: 15px; /* Adjust as needed */
+        margin: 1px; /* Ensure no margin below the paragraph */
+      }
+
+      /* footr end */
+
+      /* Full-width input fields */
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: none;
+        background: #f1f1f1;
+      }
+
+      /* Add a background color when the inputs get focus */
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+
+      /* Set a style for all buttons */
+      button {
+        background-color: #04aa6d;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+
+      button:hover {
+        opacity: 1;
+      }
+
+      /* Extra styles for the cancel button */
+      .cancelbtn {
+        padding: 14px 20px;
+        background-color: #f44336;
+      }
+
+      /* Float cancel and signup buttons and add an equal width */
+      .cancelbtn,
+      .signupbtn {
+        float: left;
+        width: 40%;
+        margin: 10px;
+      }
+
+
+      /* The Modal (background) */
+      .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 50%; /* Full width */
+        height: 900%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: #474e5d;
+        padding-top: 50px;
+      }
+
+      /* Modal Content/Box */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+      }
+
+      /* Style the horizontal ruler */
+      hr {
+        border: 1px solid #f1f1f1;
+        margin-bottom: 25px;
+      }
+
+      /* The Close Button (x) */
+      .close {
+        position: absolute;
+        right: 35px;
+        top: 15px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #f1f1f1;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #f44336;
+        cursor: pointer;
+      }
+
+      /* Clear floats */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+
+      /* Change styles for cancel button and signup button on extra small screens */
+      @media screen and (max-width: 300px) {
+        .cancelbtn,
+        .signupbtn {
+          width: 100%;
+        }
+      }
+    </style>
+    <script>
+      function validate()
+      {
+      var name=document.getElementById("name");
+      var email=document.getElementById("email");
+      var psw=document.getElementById("psw");
+      var pswRepeat=document.getElementById("psw-repeat");
+      var emailexp=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+      if(name.value=="" || name.value==null){
+        alert("please enter your name")
+        name.focus();
+
+    }else if(email.value=="" || email.value==null){
+        alert("please enter email address");
+        email.focus();
+    }else if (!emailexp.test(email.value))
+    {
+        alert("please enter valid email address");
+        email.focus();
+    }else if(psw.value=="" || psw.value==null){
+        alert("please enter Password")
+        psw.focus();
+    }else if(psw.value.length<8){
+        alert("please enter min 8 digit or char ")
+        psw.focus();
+    }else if(pswRepeat.value=="" || pswRepeat.value==null){
+        alert("please enter Confirm Password")
+        confirmpassword.focus();
+    }else if(pswRepeat.value!=password.value){
+        alert("please enter same Password")
+        pswRepeat.focus();
+    }else
+    {
+        document.getElementById("regForm").submit();
+    }
+
+
+      }
+    </script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <img
+          src="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Logo.svg"
+          alt="logo"
+        />
+      </div>
+      <div class="nav-links">
+        <a href="{% url 'myweb:index' %}" style="color: rgb(213, 0, 160);">Home</a>
+        <a href="{% url 'myweb:gallery' %}">Gallery</a>
+        <a href="{% url 'myweb:services' %}">Services</a>
+        <a href="{% url 'myweb:blog' %}">Blog</a>
+        <a href="{% url 'myweb:index' %}">About</a>
+      </div>
+      <div class="nav-icons">
+        <a href="#"><i class="ri-search-line"></i></a>
+        <button
+          style="
+            height: 40px;
+            width: auto;
+            align-items: center;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            background-color: #ff3370;
+          "
+        >
+          My Account
+        </button>
+      </div>
+    </div>
+    <div class="bg-img">
+        <form   id="regForm" action="{% url 'myweb:signup'%}" onsubmit="validate();" method="post">
+            {% csrf_token %}
+            <div class="container">
+              <h1 style="color: white">Sign Up</h1>
+              <p style="color: white">
+                Please fill in this form to create an account.
+              </p>
+              <hr />
+               <label for="name" style="color: white"><b>Name</b></label>
+              <input
+                type="text"
+                placeholder="Enter name"
+                name="name"
+                id="name"
+                required
+              />
+              <label for="email" style="color: white"><b>Email</b></label>
+              <input
+                type="text"
+                placeholder="Enter Email"
+                name="email"
+                id="email"
+                required
+              />
+
+              <label for="psw" style="color: white"><b>Password</b></label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="psw"
+                id="psw"
+                required
+              />
+
+              <label for="psw-repeat" style="color: white"
+                ><b>Repeat Password</b></label
+              >
+              <input
+                type="password"
+                placeholder="Repeat Password"
+                name="psw-repeat"
+                id="psw-repeat"
+                required
+              />
+
+              <label>
+                <input
+                  type="checkbox"
+                  checked="checked"
+                  name="remember"
+                  style="margin-bottom: 15px"
+                />
+                <b style="color: white">Remember me</b>
+              </label>
+
+              <p style="color: white">
+                By creating an account you agree to our
+                <a href="#" style="color: dodgerblue">Terms & Privacy</a>.
+              </p>
+
+              <div class="clearfix">
+                <button
+                  type="button"
+                  onclick="window.location.href='{% url 'myweb:index' %}'"
+                  class="cancelbtn"
+                >
+                  Cancel
+                </button>
+                <button type="submit" class="signupbtn">Sign Up</button>
+              </div>
+            </div>
+          </form>
+    
+    </div>
+    <div class="site-footer-row-container-inner">
+      <div class="site-container">
+        <div
+          class="site-middle-footer-inner-wrap site-footer-row site-footer-row-columns-4 site-footer-row-column-layout-left-forty site-footer-row-tablet-column-layout-default site-footer-row-mobile-column-layout-row ft-ro-dir-column ft-ro-collapse-normal ft-ro-t-dir-default ft-ro-m-dir-default ft-ro-lstyle-noline"
+        >
+          <div
+            class="site-footer-middle-section-1 site-footer-section footer-section-inner-items-1"
+          >
+            <div
+              class="footer-widget-area widget-area site-footer-focus-item footer-widget1 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default"
+              data-section="sidebar-widgets-footer1"
+            >
+              <div class="footer-widget-area-inner site-info-inner">
+                <div id="block-16" class="widget widget_block">
+                  <div class="wp-block-group is-layout-flow">
+                    <div class="wp-block-group__inner-container toggled-off">
+                      <h3
+                        class="has-theme-palette-1-color has-text-color wp-block-heading"
+                        style="font-size: 16px"
+                      >
+                        <img
+                          decoding="async"
+                          class="wp-image-10147"
+                          style="width: 190px"
+                          src="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Footer-Logo.svg"
+                          alt=""
+                        />
+                      </h3>
+
+                      <div class="wp-block-group is-layout-flow">
+                        <div class="wp-block-group__inner-container">
+                          <p>
+                            502 New Design Str, Melbourne, <br />San Francisco,
+                            CA 94110,<br />
+                            United States of America​ Australia
+                          </p>
+
+                          <p
+                            class="has-theme-palette-3-color has-text-color has-medium-font-size"
+                            style="
+                              font-weight: bolder;
+                              font-size: 25px;
+                              color: #90c427;
+                            "
+                          >
+                            +1 123-456-789
+                          </p>
+
+                          <p>Email:<a href="#">demo@example.com</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- .footer-widget1 -->
+          </div>
+          <div
+            class="site-footer-middle-section-2 site-footer-section footer-section-inner-items-1"
+          >
+            <div
+              class="footer-widget-area widget-area site-footer-focus-item footer-widget2 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default"
+              data-section="sidebar-widgets-footer2"
+            >
+              <div class="footer-widget-area-inner site-info-inner">
+                <div id="block-17" class="widget widget_block">
+                  <div class="wp-block-group is-layout-flow">
+                    <div class="wp-block-group__inner-container toggled-off">
+                      <h3
+                        class="widget-title has-theme-palette-1-color has-text-color wp-block-heading"
+                        style="text-transform: capitalize"
+                      >
+                        Company
+                      </h3>
+
+                      <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Affiliate</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- .footer-widget2 -->
+          </div>
+          <div
+            class="site-footer-middle-section-3 site-footer-section footer-section-inner-items-1"
+          >
+            <div
+              class="footer-widget-area widget-area site-footer-focus-item footer-widget3 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default"
+              data-section="sidebar-widgets-footer3"
+            >
+              <div class="footer-widget-area-inner site-info-inner">
+                <div id="block-18" class="widget widget_block">
+                  <div class="wp-block-group is-layout-flow">
+                    <div class="wp-block-group__inner-container toggled-off">
+                      <h3
+                        class="widget-title has-theme-palette-1-color has-text-color wp-block-heading"
+                        style="text-transform: capitalize"
+                      >
+                        Solutions
+                      </h3>
+
+                      <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Whois</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li style="color: white">
+                          <a href="#"></a><a href="#">Exchanges</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- .footer-widget3 -->
+          </div>
+          <div
+            class="site-footer-middle-section-4 site-footer-section footer-section-inner-items-1"
+          >
+            <div
+              class="footer-widget-area widget-area site-footer-focus-item footer-widget4 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default"
+              data-section="sidebar-widgets-footer4"
+            >
+              <div class="footer-widget-area-inner site-info-inner">
+                <div id="block-20" class="widget widget_block">
+                  <h2
+                    class="wp-block-heading has-theme-palette-2-color has-text-color"
+                    style="color: #ff3370; font-weight: bolder"
+                  >
+                    Newsletter
+                  </h2>
+                </div>
+                <div id="block-21" class="widget widget_block">
+                  <p></p>
+                  <div
+                    class="wpcf7 js"
+                    id="wpcf7-f11929-o2"
+                    lang="en-US"
+                    dir="ltr"
+                  >
+                    <div class="screen-reader-response">
+                      <p
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                      ></p>
+                      <ul></ul>
+                    </div>
+                    <form
+                      action="/wp/WP01/WP01021/#wpcf7-f11929-o2"
+                      method="post"
+                      class="wpcf7-form init"
+                      aria-label="Contact form"
+                      novalidate="novalidate"
+                      data-status="init"
+                    >
+                      <div style="display: none">
+                        <input type="hidden" name="_wpcf7" value="11929" />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_version"
+                          value="5.8.7"
+                        />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_locale"
+                          value="en_US"
+                        />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_unit_tag"
+                          value="wpcf7-f11929-o2"
+                        />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_container_post"
+                          value="0"
+                        />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_posted_data_hash"
+                          value=""
+                        />
+                      </div>
+                      <p>
+                        <label
+                          ><span
+                            class="wpcf7-form-control-wrap"
+                            data-name="your-email"
+                            ><input
+                              size="40"
+                              class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
+                              aria-required="true"
+                              aria-invalid="false"
+                              placeholder="Enter Your email"
+                              type="email"
+                              name="your-email"
+                          /></span>
+                        </label>
+                      </p>
+                      <div class="footer-btn">
+                        <p>
+                          <button
+                            style="background-color: #ff3370; color: white"
+                          >
+                            Submit
+                          </button>
+                        </p>
+                        <div></div>
+                      </div>
+                      <div
+                        class="wpcf7-response-output"
+                        aria-hidden="true"
+                      ></div>
+                    </form>
+                  </div>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <!-- .footer-widget4 -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy;2024 All Rights Reserved. Developed By CoderPlace</p>
+    </div>
+  </body>
+</html>

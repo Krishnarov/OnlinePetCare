@@ -1,0 +1,177 @@
+.downbox{
+  display: flex;
+  height: 500px;
+  width: 100%;
+}
+.downbox1{
+  width: 50%;
+  height: 500px;
+  margin: 0px;
+  padding: 0px;
+}
+.downbox2{
+  width: 50%;
+  height:500px;
+  /* margin-bottom: 40px; */
+}
+.downbox2 img{
+  padding: 0px;
+  margin: 0px;
+  justify-content: center;
+  align-items: center;
+}
+.downbox2 img{
+ 
+  margin-left: 300px;
+  margin-top: 70px;
+  transition: transform 0.2s ease-in-out;
+
+}
+.downbox2 {
+  width: 100%;
+  height: auto;
+  }
+
+.downbox2 img:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+.accordion-box {
+  width: 30%; 
+  float: left; 
+  padding-top: 70px; /* Padding of 200px from the top */
+  padding-left: 70px;  /* Adjust other padding if needed */
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.elementor-accordion-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  width: 500px;
+  height: 70px;
+}
+
+.elementor-accordion-title {
+  padding: 1%;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.accordion-icon {
+  font-size: 18px;
+  color: #333;
+}
+
+.accordion-content {
+  display: none;
+  /* padding: 10px; */
+  background-color: #fff;
+  border-radius: 4px;
+  width: 500px;
+}
+.accordion-content p{
+  font-size: 27px;
+  padding: 1%;
+}
+
+.accordion-header.active .accordion-icon i {
+  transform: rotate(180deg); /* Rotate icon when active */
+}
+
+.accordion-header.active .fa-plus {
+  display: none;
+}
+
+.accordion-header.active .fa-minus {
+  display: inline;
+}
+
+.accordion-icon .fa-minus {
+  display: none;
+}
+
+/* Open the content box when active */
+.accordion-header.active + .accordion-content {
+  display: block;
+}
+.slider {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 120px;
+}
+
+.card1 {
+  /* background-color: #007BFF; */
+  color: white;
+  font-size: 20px;
+  margin: 0px;
+  border-radius: 10px;
+ padding-right: 10px;
+ padding-left: 40px;
+ margin: 20px;
+  height: 600px;
+  width: 30%;
+  display: flex;
+  /* border: 1px solid black; */
+}
+/* Targeting Slick slider arrows */
+.slick-prev, .slick-next {
+  color: black; /* Change the arrow color */
+  size: 40px;
+  font-size: 0px; /* Optional: Adjust the size of the arrows */
+  z-index: 1;
+  padding-left: 70px;
+  padding-right: 30px;/* Ensure the arrows are on top */
+}
+
+.slick-prev:before, .slick-next:before {
+  color: black; /* Change the default arrow color to black */
+}
+.slick-prev{
+  padding-left: 130px;
+}
+.card1 img:hover {
+  transform: scale(1.05); 
+  transition: transform 0.2s ease-in-out;
+}
+/* Style for the image container and text */
+.image-container img {
+  width: 100%;      /* Full width of the container */
+  height: 50%;     /* Full height of the container */
+  object-fit:fill; /* Ensure the image covers the entire container without distortion */
+  border-radius: 5px;
+}
+
+.text-box {
+  margin-top: 10px;
+  font-size: 18px;
+}
+.card1 img{
+  box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.4); /* Added box shadow */
+  border-radius: 10px;
+}
+.btn2{
+  border:none;
+  outline:none;
+  background-color:rgb(213, 0, 160);
+  border-radius:10px;
+  padding:10px;
+  color:white;
+  
+}
+.btn2:hover{
+  background-color: rgb(181, 44, 199);
+  transition: transform 0.2s ease-in-out;
+}
+

@@ -1,0 +1,731 @@
+<html>
+
+<head>
+  {% load static %}
+  <charset="utf-8">
+    <meta name="viewport" meta content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+
+    <script>
+      function validate() {
+        var name = document.getElementById("name");
+        var email = document.getElementById("email");
+
+        var emailexp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if (email.value == "" || email.value == null) {
+          alert("please enter email address");
+          email.focus();
+        } else if (!emailexp.test(email.value)) {
+          alert("please enter valid email address");
+          email.focus();
+        } else {
+          document.getElementById("enqForm").submit();
+        }
+      }
+    </script>
+</head>
+
+<body style="background-color: #f2f2f2;">
+  <div class="container-fluid">
+
+<!-- navbar section -->
+    <div class="navbar">
+      <div class="logo"><img src="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Logo.svg" alt="logo"></div>
+      <div class="nav-links">
+        <a href="{% url 'myweb:index' %}" style="color: rgb(213, 0, 160);">Home</a>
+        <a href="{% url 'myweb:gallery' %}">Gallery</a>
+        <a href="{% url 'myweb:services' %}">Services</a>
+        <a href="{% url 'myweb:blog' %}">Blog</a>
+        <a href="{% url 'myweb:index' %}">About</a>
+
+      </div>
+      <div class="nav-icons">
+        <a href="#"><i class="ri-search-line"></i></a>
+        <a href="{% url 'myweb:login'%}"><i class="ri-user-line"></i></a>
+      </div>
+    </div>
+    <!-- Slider Section -->
+    {% if messages %}
+    <ul style='background:green;height:40px; padding-left:50px;'>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<div class="row">
+
+  <div class="col-sm-12">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <!-- Carousel inner -->
+      <div class="carousel-inner">
+        {% for image in images %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %} ratio ratio-16x9">
+          <img class="w-100 " src="{{ image.image.url }}" alt="{{ image.title }}" style="" />
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Carousel controls -->
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+    <br><br>
+
+
+
+
+    <!-- about us we make them happy section -->
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <center> <a class="about" style=" font-size:45px; font-weight: 700; color: rgb(213, 0, 160);" href="about.html">About Us</a> </center>
+        <br>
+
+        <center>
+          <h1 style=" font-size:60px; font-weight:900;">We Can Make Them Happy</h1>
+        </center>
+
+      </div>
+
+    </div>
+
+
+
+    <br /><br/>
+    <!-- rounded image sction -->
+    <div class="row">
+
+      <div class="col-sm-6">
+        <div class="imagee">
+        <center><img src="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/About-Us.png" class="rounded-circle" alt="Responsive image" height="400px" width="400px"></center>
+      </div></div>
+      <div class="col-sm-6">
+        <h1 style=" font-size:20px; font-weight:400;">There are many variations of passages of Lorem Ipsum available,
+          but the majority have suffere alteration in Which some form, injected humour, randomised words which don’t
+          slightly believable. If you are going to use a passage of Lorem Ipsum.</h1>
+        <br />
+        <ul>
+          <b>
+            <li>Overexposure Of Domestic Animals</li><br />
+            <li>We Save And Protect Animals</li><br />
+            <li>Raise The Bar On The Grooming Experience</li><br />
+            <li>Highest Quality Premium Western Forage</li>
+        </ul><br /></b>
+        </ul>
+
+        <button class="btn2" style="margin-left: 45px;">LEARN MORE</button>
+      </div>
+
+
+    </div>
+
+    <br /><br />
+    <!-- What We Provide section -->
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <center> <a class="about" style=" font-size:40px; font-weight: 700; color: rgb(213, 0, 160);;" href="#">What We Provide</a> </center><br>
+
+        <center>
+          <h1 style=" font-size:60px; font-weight:900;">Our Work And Services</h1>
+        </center>
+
+
+      </div>
+
+    </div>
+    <br /><br />
+     <!-- card deck section -->
+    <div class="row">
+      <div class="card-deck" style="width: 100%;">
+        {% for cards in Cards %}
+        <div class="col-md-4 mb-4">
+          <div class="card" style="height: 100%; padding-top: 30px;">
+            <center>
+              <img class="rounded-circle" src="{{ cards.image.url }}" alt="Card image cap"
+                height="200" width="200"
+                style="border:2px dashed; padding: 10px; color: rgb(213, 0, 160);">
+            </center>
+            <div class="card-body">
+              <center>
+                <h5 style="font-size:30px; font-weight: 700;">{{ cards.title }}</h5>
+                <p class="card-text" style="font-size: 18px; padding-top: 20px;">
+                  {{ cards.Description }}
+                </p>
+              </center>
+            </div>
+            <p class="card-text" style="text-align: center; padding-bottom: 25px;">
+              <a href="#" style="color: rgb(213, 0, 160); font-weight: bolder;">READ MORE</a>
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+
+<!-- 8boc image -->
+    <br /><br />
+    <div class="row">
+      <div class="col-sm-12">
+
+        <center> <a class="about" style=" font-size:40px; font-weight: 700; color: rgb(213, 0, 160);;" href="#">Our Best Trainer</a> </center><br>
+
+        <center>
+          <h1 style=" font-size:60px; font-weight:900;">Look How We Train Them</h1>
+        </center>
+
+      </div>
+    </div>
+    <br />
+
+    <!-- 8 box images -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card-deck" id="look-card">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'image/a1.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'image/a2.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'image/a3.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'image/a4.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="card-deck" id="look-card">
+          <div class="card">
+            <img class="card-img-top" src="{% static 'image/a5.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'image/a6.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'image/a7.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="{% static 'image/a8.jpg'%}" alt="Card image cap" height="300px" width="250px">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /> <br />
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <!-- Carousel inner -->
+          <div class="carousel-inner">
+            {% for image in images %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %} ratio ratio-16x9">
+              <img class="w-100 " src="{{ image.image.url }}" alt="{{ image.title }}" style="" />
+            </div>
+            {% endfor %}
+          </div>
+    
+          <!-- Carousel controls -->
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="padding-top: 40px;">
+      <div class="col-sm-12">
+
+        <center> <a class="about" style=" font-size:40px; font-weight: 700; color: rgb(213, 0, 160);;" href="#">Service Workers</a> </center><br>
+
+        <center>
+          <h1 style=" font-size:60px; font-weight:900;">Animal Care Workers</h1>
+        </center>
+
+      </div>
+
+      <div class="card-deck" id="Veterinarian">
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/w1.jpg'%}" alt="Card image cap">
+          <div class="card-body1">
+            <p class="card-title">Veterinarian</p>
+            <h3 class="card-text">Anish</h3>
+          </div>
+         
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/w2.jpg'%}" alt="Card image cap">
+          <div class="card-body1">
+            <p class="card-title">Veterinarian</p>
+            <h3 class="card-text">Anish</h3>
+          </div>
+          
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="{% static 'image/w3.jpg'%}" alt="Card image cap">
+          <div class="card-body1">
+            <p class="card-title">Veterinarian</p>
+            <h3 class="card-text">Anish</h3>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h4
+          style="color:rgb(213, 0, 160);; font-size: 40px; font-weight: bolder; text-align: center; padding-top: 50px; font-weight: 700;">
+          Asked Questions</h4>
+        <h1
+          style="color: black; font-size: 60px; font-weight: bolder; text-align: center; padding-top: 30px; font-weight: 900;">
+          Frequently Asked Questions</h1>
+      </div>
+    </div>
+    <!-- question box -->
+    <div class="downbox">
+      <div class="downbox1">
+      <div class="accordion-box">
+        <div class="elementor-accordion">
+          <div class="elementor-accordion-item">
+            <div class="accordion-header" id="tab-1" onclick="acco1()">
+              <h3 class="elementor-accordion-title">Feed the world you want to live</h3>
+              <span class="accordion-icon"><i class="ri-add-line"></i></span>
+            </div>
+            <div class="accordion-content" id="content-1">
+              <p>There are many variations of passages of Lorem Ipsum available, the majority have suffered
+                alteration...</p>
+            </div>
+          
+
+          <div class="elementor-accordion-item">
+            <div class="accordion-header" id="tab-2" onclick="acco2()">
+              <h3 class="elementor-accordion-title">Help local animal shelters today</h3>
+              <span class="accordion-icon"><i class="ri-add-line"></i></span>
+            </div>
+            <div class="accordion-content" id="content-2">
+              <p>There are many variations of passages of Lorem Ipsum available, the majority have suffered
+                alteration...</p>
+            </div>
+          </div>
+
+          <div class="elementor-accordion-item">
+            <div class="accordion-header" id="tab-3" onclick="acco3()">
+              <h3 class="elementor-accordion-title">Community driven fundraisers</h3>
+              <span class="accordion-icon"><i class="ri-add-line"></i></span>
+            </div>
+            <div class="accordion-content" id="content-3">
+              <p>There are many variations of passages of Lorem Ipsum available, the majority have suffered
+                alteration...</p>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    
+
+        <div class="downbox2">
+          <img decoding="async" width="400" height="400"
+            src="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Questions-1.png"
+            class="attachment-full size-full wp-image-11898" alt="" loading="lazy"
+            srcset="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Questions-1.png 591w, https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Questions-1-300x294.png">
+        </div>
+      </div>
+   
+    
+    <div class="contact">
+      <h3 style="color: rgb(213, 0, 160);;">For Your Contact</h3>
+    <h1>Different Ways To Contact Us</h1>
+    </div>
+
+    <div class="container" id="form-cont">
+      <div class="left">
+        <form method="post" onsubmit="validate();" id="enqForm">
+          {% csrf_token %}
+        <input name="name" type="text" class="input" placeholder="Enter your name" style="margin-top: 30px; font-size: 20px;">
+        <input name="email" type="text" class="input" placeholder="Enter your email" style=" font-size: 20px;">
+        <input type="text" name="subject" class="input" placeholder="Enter your subject" style=" font-size: 20px;">
+        <textarea class="input" name="message" placeholder="Enter your message" style="font-size: 20px; size: 60px;"></textarea>
+        <button class="button" type="submit">SEND MESSAGE</button>
+        </from>
+      </div>
+      <div class="right">
+        <p style="text-align:left; font-size: 30px; font-weight: bolder; align-items: center; color: rgb(213, 0, 160);">Contact Us</p>
+        <h3 style="align-items: center; font-weight: bolder; font-size: 40px;">Our Address</h3>
+            <p style="font-size: 20px;"><i class="ri-map-pin-5-line" style="color: rgb(213, 0, 160); font-size: 20px;"></i> 22 Gentry Court, Bryans Road,md, 20616 United States Of America</p>
+            <h3 style="font-weight: bolder; font-size: 40px;">Contact 24/7</h3>
+            <p style="font-size: 20px;"><i class="ri-phone-line" style="color:rgb(213, 0, 160); font-size: 20px;"></i> +1800 123 456 78</p>
+            <h3 style="font-weight: bolder; font-size: 40px;"> Address</h3>
+            <p style="font-size: 20px;"><i class="ri-mail-line" style="color: rgb(213, 0, 160); font-size: 20px "></i> exmaple@gmail.com</p>
+      </div>
+    </div>
+   
+
+
+
+    <div class="mouse">
+      <h3 style="font-size:40px; color: rgb(213, 0, 160);;">Get Latest Update</h3>
+      <h1 style="font-size:60px;">Read Latest Blog Posts</h1>
+    </div>
+    <!-- slider click card  -->
+    <div class="slider">
+      <div class="card1">
+        <div class="image-container">
+          <img src="{% static 'image/mouse.jpg'%}" alt="Image 1">
+        </div>
+        <div class="text-box">
+          <h3 style="color: black; font-weight: bolder;">Standard the Chunk of Ipsum</h3>
+          <p style="color: red;">March 3, 2024 . 2 Comments</p>
+          <p style="text-align: left; color: black;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+        </div>
+      </div>
+      <div class="card1">
+        <div class="image-container">
+          <img src="{% static 'image/dog.jpg'%}" alt="Image 1">
+        </div>
+        <div class="text-box">
+          <h3 style="color: black; font-weight: bolder;">Standard the Chunk of Ipsum</h3>
+          <p style="color: red;">March 3, 2024 . 2 Comments</p>
+          <p style="text-align: left; color: black;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+        </div>
+      </div>
+    
+      <div class="card1">
+        <div class="image-container">
+          <img src="{% static 'image/cat.jpg'%}" alt="Image 1">
+        </div>
+        <div class="text-box">
+          <h3 style="color: black; font-weight: bolder;">Standard the Chunk of Ipsum</h3>
+          <p style="color: red;">March 3, 2024 . 2 Comments</p>
+          <p style="text-align: left; color: black;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+        </div>
+      </div>
+      <div class="card1">
+        <div class="image-container">
+          <img src="{% static 'image/rabit.jpg'%}" alt="Image 1">
+        </div>
+        <div class="text-box">
+          <h3 style="color: black; font-weight: bolder;">Standard the Chunk of Ipsum</h3>
+          <p style="color: red;">March 3, 2024 . 2 Comments</p>
+          <p style="text-align: left; color: black;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+        </div>
+      </div>
+      <div class="card1">
+        <div class="image-container">
+          <img src="{% static 'image/billa.jpg'%}" alt="Image 1">
+        </div>
+        <div class="text-box">
+          <h3 style="color: black; font-weight: bolder;">Standard the Chunk of Ipsum</h3>
+          <p style="color: red;">March 3, 2024 . 2 Comments</p>
+          <p style="text-align: left; color: black;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+        </div>
+      </div>
+      <div class="card1">
+        <div class="image-container">
+          <img src="{% static 'image/dogs.jpg'%}" alt="Image 1">
+        </div>
+        <div class="text-box">
+          <h3 style="color: black; font-weight: bolder;">Standard the Chunk of Ipsum</h3>
+          <p style="color: red;">March 3, 2024 . 2 Comments</p>
+          <p style="text-align: left; color: black;">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form,</p>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- footer section -->
+
+    <div class="site-footer-row-container-inner">
+      <div class="site-container">
+        <div
+          class="site-middle-footer-inner-wrap site-footer-row site-footer-row-columns-4 site-footer-row-column-layout-left-forty site-footer-row-tablet-column-layout-default site-footer-row-mobile-column-layout-row ft-ro-dir-column ft-ro-collapse-normal ft-ro-t-dir-default ft-ro-m-dir-default ft-ro-lstyle-noline"
+        >
+          <div
+            class="site-footer-middle-section-1 site-footer-section footer-section-inner-items-1"
+          >
+            <div
+              class="footer-widget-area widget-area site-footer-focus-item footer-widget1 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default"
+              data-section="sidebar-widgets-footer1"
+            >
+              <div class="footer-widget-area-inner site-info-inner">
+                <div id="block-16" class="widget widget_block">
+                  <div class="wp-block-group is-layout-flow">
+                    <div class="wp-block-group__inner-container toggled-off">
+                      <h3
+                        class="has-theme-palette-1-color has-text-color wp-block-heading"
+                        style="font-size: 16px"
+                      >
+                        <img
+                          decoding="async"
+                          class="wp-image-10147"
+                          style="width: 190px"
+                          src="https://demos.coderplace.com/wp/WP01/WP01021/wp-content/uploads/2022/11/Footer-Logo.svg"
+                          alt=""
+                        />
+                      </h3>
+
+                      <div class="wp-block-group is-layout-flow">
+                        <div class="wp-block-group__inner-container">
+                          <p>
+                            502 New Design Str, Melbourne, <br />San Francisco,
+                            CA 94110,<br />
+                            United States of America​ Australia
+                          </p>
+
+                          <p
+                            class="has-theme-palette-3-color has-text-color has-medium-font-size"
+                            style="
+                              font-weight: bolder;
+                              font-size: 25px;
+                              color: #90c427;
+                            "
+                          >
+                            +1 123-456-789
+                          </p>
+
+                          <p>Email:<a href="#">demo@example.com</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- .footer-widget1 -->
+          </div>
+          <div
+            class="site-footer-middle-section-2 site-footer-section footer-section-inner-items-1"
+          >
+            <div
+              class="footer-widget-area widget-area site-footer-focus-item footer-widget2 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default"
+              data-section="sidebar-widgets-footer2"
+            >
+              <div class="footer-widget-area-inner site-info-inner">
+                <div id="block-17" class="widget widget_block">
+                  <div class="wp-block-group is-layout-flow">
+                    <div class="wp-block-group__inner-container toggled-off">
+                      <h3
+                        class="widget-title has-theme-palette-1-color has-text-color wp-block-heading"
+                        style="text-transform: capitalize"
+                      >
+                        Company
+                      </h3>
+
+                      <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Affiliate</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- .footer-widget2 -->
+          </div>
+          <div
+            class="site-footer-middle-section-3 site-footer-section footer-section-inner-items-1"
+          >
+            <div
+              class="footer-widget-area widget-area site-footer-focus-item footer-widget3 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default"
+              data-section="sidebar-widgets-footer3"
+            >
+              <div class="footer-widget-area-inner site-info-inner">
+                <div id="block-18" class="widget widget_block">
+                  <div class="wp-block-group is-layout-flow">
+                    <div class="wp-block-group__inner-container toggled-off">
+                      <h3
+                        class="widget-title has-theme-palette-1-color has-text-color wp-block-heading"
+                        style="text-transform: capitalize"
+                      >
+                        Solutions
+                      </h3>
+
+                      <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Whois</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li style="color: white">
+                          <a href="#"></a><a href="#">Exchanges</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- .footer-widget3 -->
+          </div>
+          <div
+            class=""
+          >
+            <div
+              class="footer-widget-area widget-area site-footer-focus-item footer-widget4 content-align-default content-tablet-align-default content-mobile-align-default content-valign-default content-tablet-valign-default content-mobile-valign-default"
+              data-section="sidebar-widgets-footer4"
+            >
+              <div class="footer-widget-area-inner site-info-inner">
+                <div id="block-20" class="widget widget_block">
+                  <h2
+                    class="wp-block-heading has-theme-palette-2-color has-text-color"
+                    style="color: #ff3370; font-weight: bolder"
+                  >
+                    Newsletter
+                  </h2>
+                </div>
+                <div id="block-21" class="widget widget_block">
+                  <p></p>
+                  <div
+                    class="wpcf7 js"
+                    id="wpcf7-f11929-o2"
+                    lang="en-US"
+                    dir="ltr"
+                  >
+                    <div class="screen-reader-response">
+                      <p
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                      ></p>
+                      <ul></ul>
+                    </div>
+                    <form
+                      action="/wp/WP01/WP01021/#wpcf7-f11929-o2"
+                      method="post"
+                      class="wpcf7-form init"
+                      aria-label="Contact form"
+                      novalidate="novalidate"
+                      data-status="init"
+                    >
+                      <div style="display: none">
+                        <input type="hidden" name="_wpcf7" value="11929" />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_version"
+                          value="5.8.7"
+                        />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_locale"
+                          value="en_US"
+                        />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_unit_tag"
+                          value="wpcf7-f11929-o2"
+                        />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_container_post"
+                          value="0"
+                        />
+                        <input
+                          type="hidden"
+                          name="_wpcf7_posted_data_hash"
+                          value=""
+                        />
+                      </div>
+                      <p>
+                        <label
+                          ><span
+                            class="wpcf7-form-control-wrap"
+                            data-name="your-email"
+                            ><input
+                              size="40"
+                              class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email"
+                              aria-required="true"
+                              aria-invalid="false"
+                              placeholder="Enter Your email"
+                              type="email"
+                              name="your-email"
+                          /></span>
+                        </label>
+                      </p>
+                      <div class="footer-btn">
+                        <p>
+                          <button
+                            style="background-color: #ff3370; color: white"
+                          >
+                            Submit
+                          </button>
+                        </p>
+                        <div></div>
+                      </div>
+                      <div
+                        class="wpcf7-response-output"
+                        aria-hidden="true"
+                      ></div>
+                    </form>
+                  </div>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <!-- .footer-widget4 -->
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="copyright">
+  <p>&copy;2024 All Rights Reserved. Developed By CoderPlace</p>
+</div>
+
+
+
+  </div>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="{% static 'js/script.js'%}"></script>
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+
+
+/* 3 div full body */
+
+
+.fullbody{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.blogbox {
+  position: relative;
+  width: 100%; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  overflow: hidden; /* Ensures the image doesn't overflow */
+}
+
+.blogbox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('') center/cover no-repeat;
+  filter: blur(10px); /* Adjust blur intensity */
+  z-index: -1; /* Places image behind content */
+}
+
+.blogbox .content {
+  position: relative;
+  z-index: 1; /* Ensures content is above the background */
+  color: white; /* Adjust content color as needed */
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.blogbox a:hover {
+  color: red; /* Text color on hover */
+}
+
+.first{
+  
+    height: auto;
+    width: 20%;
+    margin-right: 30px;
+
+}
+.serch{
+    display: flex;
+    margin-top: 30px;
+}
+.serch i{
+    padding-top: 45px;
+    padding-left: 20px;
+   
+}
+
+.second{
+    height: auto;
+    width: 40%; 
+}
+.third{
+    height: auto;
+    width: 40%;
+}
+
+/* second and third */
+
+.second,.third{
+    height: auto;
+    width: 100%;
+    padding-top: 60px;
+    margin: 0px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.card {
+ 
+  overflow: hidden;
+  height: 550px;
+  width: 100%;
+  border: none;
+}
+.card img{
+  border-radius: 5px;
+}
+/* On mouse-over, add a deeper shadow */
+.card img:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 20px 16px;
+}
+ 
+ 
+.second img{
+    height: 350px;;
+    width: 100%;
+}
+.third img{
+    height: 350px;
+    width: 100%;
+}
+  .card img:hover{
+    transform: scale(1.05); 
+    transition: transform 0.2s ease-in-out;
+    
+  }
+  
+  /* searchbar */
+  /* Style the search box inside the navigation bar */
+.first input[type=text] {
+    width: 300px;
+    height: 50px;
+    padding: 6px;
+    border: none;
+    margin-top: 30px;
+    font-size: 17px;
+    background-color: #f2f2f2;
+  }
+  
+  /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
+  @media screen and (max-width: 600px) {
+    .first a, .first input[type=text] {
+      float: none;
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+    .first input[type=text] {
+      border: 1px solid #ccc;
+    }
+  }
+  /* recent */
+  .recent a{
+    text-decoration: none;
+    color:black
+  }
+.recent a:hover {
+  color: red; /* Text color on hover */
+}
+.comments a{
+  text-decoration: none;
+  color: black;
+}
+.comments a:hover {
+  color: red; /* Text color on hover */
+}
+.categories a{
+  text-decoration: none;
+  color: black;
+}
+.categories a:hover {
+  color: red; /* Text color on hover */
+}
+
+  .leftimg{
+    display: flex;
+  }
+  .rimg img{
+    height: 100px;
+    width: 100px;
+  }
+  .ltxt{
+    font-size: 18px;
+    padding-left: 10px;
+    font-weight: bolder;
+    padding-top: 5px;
+  }
+
+  .lefting{
+    display: flex;
+  }
+  .ring img{
+    height: 100px;
+    width: 100px;
+  }
+  .ltxxt{
+    font-size: 18px;
+    padding-left: 10px;
+    font-weight: bolder;
+    padding-top: 5px;
+  }
+  /* Pagination links */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-left:20%;
+    padding-bottom: 50px;
+  }
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+.pagination a:hover {
+  color: red; /* Text color on hover */
+}
+
+/* Style the active/current link */
+.pagination a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {background-color: #ddd;}
+.ltxt a{
+  text-decoration: none;
+  color: black;
+}
+.ltxt a:hover {
+  color: red; /* Text color on hover */
+}
+.ltxxt a{
+  text-decoration: none;
+  color: black;
+}
+.ltxxt a:hover {
+  color: red; /* Text color on hover */
+}
